@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from './components/Layout'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Projects from './pages/Projects'
 import Home from './pages/Home'
@@ -12,20 +12,18 @@ function App() {
 
 
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           {/* Add more routes as needed */}
-          </Route>
-        </Routes>
-      </Router>
-    </>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
