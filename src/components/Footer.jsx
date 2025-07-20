@@ -32,7 +32,7 @@ const Footer = () => {
       title: 'Resources',
       links: [
         
-        { name: 'Resume', href: '#', onClick: handleDownloadCV }, // Modified this line
+        // { name: 'Resume', href: '#', onClick: handleDownloadCV }, // Modified this line
         { name: 'GitHub Repos', href: 'https://github.com/zeph254?tab=repositories' }
       ]
     },

@@ -59,14 +59,14 @@ export default function Home() {
               Contact Me
             </motion.a>
             
-        <motion.button
+        {/* <motion.button
           onClick={handleDownloadCV}
           whileHover={{ y: -3 }}
           whileTap={{ scale: 0.95 }}
           className="px-6 py-3 border border-blue-400 text-blue-400 rounded-lg flex items-center gap-2 hover:bg-blue-400/10 transition-all"
         >
           <FiDownload /> Download CV
-        </motion.button>
+        </motion.button> */}
           </div>
           
           {/* Social Links */}

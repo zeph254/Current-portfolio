@@ -9,7 +9,7 @@ const Projects = () => {
       description: "A modern news application aggregating the latest headlines with personalized feeds and search functionality.",
       tags: ["React","Firebase", "NewsAPI", "Tailwind CSS"],
       image: "https://res.cloudinary.com/du8cxwjt8/image/upload/Screenshot_12_amk4va", // Add your image to public folder
-      liveUrl: "https://daily-scoop-news-app-9615.vercel.app/",
+      liveUrl: "https://daily-scoop-news-app-nt4q.vercel.app/",
       codeUrl: "https://github.com/zeph254/Daily-Scoop-News-App", // Add your GitHub link
       icon: <SiReact className="text-blue-400" />
     },
@@ -18,7 +18,7 @@ const Projects = () => {
       description: "An interactive number guessing game with multiple difficulty levels and score tracking.",
       tags: ["JavaScript", "HTML5", "CSS3"],
       image: "https://res.cloudinary.com/du8cxwjt8/image/upload/Screenshot_13_tspvjv",
-      liveUrl: "https://numberhunt1.netlify.app/",
+      liveUrl: "https://numhunt.netlify.app/",
       codeUrl: "https://github.com/zeph254/Number-Hunt",
       icon: <SiReact className="text-blue-400" />
     },
@@ -36,7 +36,7 @@ const Projects = () => {
       description: "A lightweight blog platform where users can create, read, update and delete their posts.",
       tags: ["React", "Tailwind", "LocalStorage"],
       image: "https://res.cloudinary.com/du8cxwjt8/image/upload/Screenshot_15_tmssin",
-      liveUrl: "https://minipost.netlify.app/",
+      liveUrl: "https://postmini.netlify.app/",
       codeUrl: "https://github.com/zeph254/MiniPost",
       icon: <SiFlask className="text-gray-300" />
     },
