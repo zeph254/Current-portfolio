@@ -1,6 +1,6 @@
 # Zephania Owuor - Portfolio
 
-![Portfolio Screenshot](https://res.cloudinary.com/your-account/image/upload/portfolio-screenshot.jpg)
+
 
 A modern, interactive portfolio website showcasing my projects, skills, and professional journey as a full-stack developer.
 
