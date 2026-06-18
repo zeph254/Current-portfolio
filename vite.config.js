@@ -12,7 +12,7 @@ export default defineConfig({
       injectRegister: 'inline', // Automatically registers the PWA without breaking main.jsx imports
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-able-icon.png', 'screenshot-desktop.png', 'screenshot-mobile.png'],
       manifest: {
-        id: '/', // Matches App Identity and clears the dynamic ID fallback warning
+        id: '/', // Resolves App ID fallback identity warnings
         name: 'Zephania Owuor Portfolio',
         short_name: 'Zeph Portfolio',
         description: 'Full-Stack Developer Portfolio for Zephania Owuor',
@@ -23,19 +23,19 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: 'pwa-192x192.png', // Updated to match your actual file name perfectly
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'pwa-192x192.png',
+            src: 'pwa-192x192.png', 
             sizes: '192x192',
             type: 'image/png',
             purpose: 'maskable'
           },
           {
-            src: 'pwa-512x512.png',
+            src: 'pwa-512x512.png', // Updated to match your actual file name perfectly
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
@@ -59,7 +59,7 @@ export default defineConfig({
             src: 'screenshot-mobile.png',
             sizes: '375x812',
             type: 'image/png',
-            form_factor: 'narrow', // Satisfies mobile Rich UI setup criteria
+            form_factor: 'narrow',
             label: 'Mobile Portfolio Interface'
           }
         ]

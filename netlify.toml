@@ -1,0 +1,11 @@
+# SPA Redirect rule: Redirects all deep links to index.html so react-router-dom handles them
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Strict PWA Header caching controls
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
