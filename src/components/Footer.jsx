@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiTwitter, FiCodepen } from 'react-icons/fi';
-import { FaDev } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Swapped custom <a> tags for SPA links
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,7 +8,6 @@ const Footer = () => {
   // Function to handle CV download
   const handleDownloadCV = (e) => {
     e.preventDefault();
-    // Create a temporary anchor element
     const link = document.createElement('a');
     link.href = '/Zephania_Owuor_CV.pdf'; // Path to your CV file in public folder
     link.download = 'Zephania_Owuor_CV.pdf'; // The filename for download
@@ -17,28 +16,26 @@ const Footer = () => {
     document.body.removeChild(link);
   };
 
-  // Footer links data
+  // Footer links data structure
   const footerLinks = [
     {
       title: 'Explore',
       links: [
-        { name: 'About', href: '/about' },
-        { name: 'Projects', href: '/projects' },
-        { name: 'Skills', href: '/skills' },
-        { name: 'Contact', href: '/contact' }
+        { name: 'About', to: '/about', isExternal: false },
+        { name: 'Projects', to: '/projects', isExternal: false },
+        { name: 'Skills', to: '/skills', isExternal: false },
+        { name: 'Contact', to: '/contact', isExternal: false }
       ]
     },
     {
       title: 'Resources',
       links: [
-        
-        // { name: 'Resume', href: '#', onClick: handleDownloadCV }, // Modified this line
-        { name: 'GitHub Repos', href: 'https://github.com/zeph254?tab=repositories' }
+        { name: 'Resume', to: '#', onClick: handleDownloadCV, isExternal: false }, 
+        { name: 'GitHub Repos', to: 'https://github.com/zeph254?tab=repositories', isExternal: true }
       ]
     },
   ];
 
-  // Social media links
   const socialLinks = [
     { icon: <FiGithub />, name: 'GitHub', href: 'https://github.com/zeph254' },
     { icon: <FiLinkedin />, name: 'LinkedIn', href: 'https://www.linkedin.com/in/zephaniah-ulare-452019347/' },
@@ -71,6 +68,8 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.name}
+                  target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
+                  rel="noopener noreferrer"
                   whileHover={{ y: -3, color: '#60a5fa' }}
                   whileTap={{ scale: 0.9 }}
                   className="text-gray-400 hover:text-blue-400 text-lg"
@@ -81,7 +80,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Footer links */}
+          {/* Footer links mapping */}
           {footerLinks.map((column, index) => (
             <motion.div
               key={index}
@@ -97,15 +96,36 @@ const Footer = () => {
               <ul className="space-y-2">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <motion.a
-                      href={link.href}
-                      onClick={link.onClick || undefined} // Add onClick handler if exists
-                      whileHover={{ x: 5, color: '#60a5fa' }}
-                      className="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2"
-                    >
-                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {link.name}
-                    </motion.a>
+                    {link.isExternal ? (
+                      <motion.a
+                        href={link.to}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ x: 5, color: '#60a5fa' }}
+                        className="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2"
+                      >
+                        {link.name}
+                      </motion.a>
+                    ) : link.onClick ? (
+                      /* Specifically handle CV/Resume click event */
+                      <motion.a
+                        href={link.to}
+                        onClick={link.onClick}
+                        whileHover={{ x: 5, color: '#60a5fa' }}
+                        className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer flex items-center gap-2"
+                      >
+                        {link.name}
+                      </motion.a>
+                    ) : (
+                      <motion.div whileHover={{ x: 5 }}>
+                        <Link
+                          to={link.to}
+                          className="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2"
+                        >
+                          {link.name}
+                        </Link>
+                      </motion.div>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -113,7 +133,7 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom copyright */}
+        {/* Bottom copyright - Privacy, Terms, and Cookies links removed */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -124,48 +144,6 @@ const Footer = () => {
           <p className="text-gray-500 text-sm">
             © {currentYear} Zephania Owuor. All rights reserved.
           </p>
-          
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <motion.a
-              href="#"
-              whileHover={{ color: '#60a5fa' }}
-              className="text-gray-500 hover:text-blue-400 text-sm"
-            >
-              Privacy Policy
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ color: '#60a5fa' }}
-              className="text-gray-500 hover:text-blue-400 text-sm"
-            >
-              Terms of Service
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ color: '#60a5fa' }}
-              className="text-gray-500 hover:text-blue-400 text-sm"
-            >
-              Cookies
-            </motion.a>
-          </div>
-        </motion.div>
-
-        {/* Back to top button (mobile only) */}
-        <motion.div 
-          className="md:hidden mt-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <motion.a
-            href="#"
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center text-sm text-blue-400 hover:text-emerald-400"
-          >
-            ↑ Back to top
-          </motion.a>
         </motion.div>
       </div>
     </footer>

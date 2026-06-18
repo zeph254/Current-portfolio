@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiUser, FiBook, FiCode, FiAward } from 'react-icons/fi';
 import { FaReact, FaPython, FaNodeJs } from 'react-icons/fa';
-import { SiFlask, SiTailwindcss, SiJavascript } from 'react-icons/si';
+import { SiFlask, SiTailwindcss, SiJavascript, SiDjango, SiFastapi } from 'react-icons/si';
 
 const About = () => {
   const education = [
@@ -26,16 +26,25 @@ const About = () => {
       institution: "Moringa School",
       qualification: "Certificate of Software Engineering",
       grade: ""
+    },
+    {
+      icon: <FiBook className="text-blue-400" />,
+      year: "2026 - Present",
+      institution: "University of the People",
+      qualification: "Bachelor's degree in Computer Science",
+      grade: ""
     }
   ];
 
   const techStack = [
     { name: "React", icon: <FaReact className="text-blue-400" /> },
-    { name: "Python", icon: <FaPython className="text-blue-600" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-    { name: "Flask", icon: <SiFlask className="text-gray-300" /> },
     { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> }
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+    { name: "Python", icon: <FaPython className="text-blue-600" /> },
+    { name: "FastAPI", icon: <SiFastapi className="text-emerald-500" /> },
+    { name: "Flask", icon: <SiFlask className="text-gray-300" /> },
+    { name: "Django", icon: <SiDjango className="text-emerald-700" /> },
+    { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> }
   ];
 
   // Rock Paper Scissors Game State
@@ -126,7 +135,7 @@ const About = () => {
                 </div>
                 <div className="flex items-start">
                   <span className="text-gray-400 min-w-[120px]">Email:</span>
-                  <span className="text-gray-200">ularezephaniah@gmail.com</span>
+                  <span className="text-gray-200 text-break">ularezephaniah@gmail.com</span>
                 </div>
                 <div className="flex items-start">
                   <span className="text-gray-400 min-w-[120px]">Phone:</span>
@@ -152,7 +161,7 @@ const About = () => {
                       whileHover={{ y: -3 }}
                       className="flex items-center gap-2 px-4 py-2 bg-gray-700/50 rounded-full border border-gray-600"
                     >
-                      <span className="text-xl">{tech.icon}</span>
+                      <span className="text-xl flex items-center justify-center">{tech.icon}</span>
                       <span className="text-gray-300 text-sm">{tech.name}</span>
                     </motion.div>
                   ))}
@@ -209,16 +218,16 @@ const About = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 shadow-lg h-full">
+                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 shadow-lg h-full animate-flex-fix">
                   <h3 className="text-xl font-semibold text-gray-200 mb-4 flex items-center gap-2">
                     <FiAward className="text-blue-400" /> My Journey
                   </h3>
                   
-                  <p className="text-gray-400 mb-3">
+                  <p className="text-gray-400 mb-3 text-sm leading-relaxed">
                     I'm an aspiring full-stack developer skilled in React, Node.js, and Flask with a passion for building scalable applications.
                   </p>
                   
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-sm leading-relaxed">
                     My journey in tech began with curiosity and has grown into a passion for problem-solving and creating digital solutions.
                   </p>
 
