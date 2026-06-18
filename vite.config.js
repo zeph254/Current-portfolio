@@ -10,8 +10,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'inline', // Automatically registers the PWA without breaking main.jsx imports
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-able-icon.png'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-able-icon.png', 'screenshot-desktop.png', 'screenshot-mobile.png'],
       manifest: {
+        id: '/', // Matches App Identity and clears the dynamic ID fallback warning
         name: 'Zephania Owuor Portfolio',
         short_name: 'Zeph Portfolio',
         description: 'Full-Stack Developer Portfolio for Zephania Owuor',
@@ -24,18 +25,42 @@ export default defineConfig({
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'
           },
           {
-            src: 'pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable'
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
+          }
+        ],
+        screenshots: [
+          {
+            src: 'screenshot-desktop.png',
+            sizes: '1280x720',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'Desktop Portfolio Interface'
+          },
+          {
+            src: 'screenshot-mobile.png',
+            sizes: '375x812',
+            type: 'image/png',
+            form_factor: 'narrow', // Satisfies mobile Rich UI setup criteria
+            label: 'Mobile Portfolio Interface'
           }
         ]
       }
