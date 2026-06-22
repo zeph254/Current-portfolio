@@ -114,16 +114,22 @@ export default function Home() {
           className="space-y-6 text-center lg:text-left"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Zephania Owuor</span>
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Zephania Ulare Owuor</span>
           </h1>
-          
+
           <h2 className="text-xl sm:text-2xl text-gray-400">
-            Full-Stack Developer | Tech Enthusiast | Continuous Learner
+            Software Developer Building Practical Solutions for Education, Agriculture, and Public Services
           </h2>
-          
+
           <p className="text-gray-400 max-w-2xl">
-            I build scalable applications through clean code and innovative solutions. 
-            Passionate about creating digital experiences that make an impact.
+            I am a software developer passionate about solving real-world problems through
+            technology. My work focuses on building systems for education, agriculture,
+            e-commerce, and public services using modern technologies such as React,
+            Flask, Django, Node.js, and PostgreSQL.
+
+            Currently, I volunteer in the ICT Department at Taita Taveta County Government,
+            contributing to software development initiatives while continuously improving
+            my skills through practical projects and community impact.
           </p>
           
           {/* Contact Info */}

@@ -5,6 +5,8 @@ import './App.css'
 import Projects from './pages/Projects'
 import NotFound from './pages/NotFound.jsx'
 import Home from './pages/Home'
+import Certifications from'./pages/Certifications.jsx'
+import Experience from "./pages/Experience.jsx";
 import Skills from './pages/Skills'
 import Contact from './pages/Contact'
 import About from './pages/About'
@@ -20,6 +22,8 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
+          <Route path="/Experience" element={<Experience/>}/>
+          <Route path="/Certifications" element={<Certifications/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/NotFound" element={<NotFound/>}/>
           {/* Add more routes as needed */}

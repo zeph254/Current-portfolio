@@ -1,17 +1,33 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail, FiUser, FiCode, FiBriefcase, FiMessageSquare } from 'react-icons/fi';
+import {
+  FiMenu,
+  FiX,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiUser,
+  FiCode,
+  FiBriefcase,
+  FiMessageSquare,
+  FiAward,
+  FiBookOpen,
+  FiHome,
+} from 'react-icons/fi';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const navItems = [
+    { name: 'Home', icon: <FiHome />, to: '/' },
     { name: 'About', icon: <FiUser />, to: '/about' },
     { name: 'Skills', icon: <FiCode />, to: '/skills' },
     { name: 'Projects', icon: <FiBriefcase />, to: '/projects' },
-    { name: 'Contact', icon: <FiMessageSquare />, to: '/contact' }
+    { name: 'Experience', icon: <FiBookOpen />, to: '/experience' },
+    { name: 'Certifications', icon: <FiAward />, to: '/certifications' },
+    { name: 'Contact', icon: <FiMessageSquare />, to: '/contact' },
   ];
 
   return (
@@ -24,7 +40,24 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
           >
-            <Link to="/">OWUOR</Link>
+            <Link
+                to="/"
+                className="flex items-center gap-2"
+            >
+                <span className="text-2xl font-extrabold">
+                  ZU
+                </span>
+
+              <div className="hidden sm:block">
+                <p className="text-sm font-semibold text-white">
+                  Zephaniah Ulare
+                </p>
+
+                <p className="text-xs text-gray-400">
+                  Software Developer
+                </p>
+              </div>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
