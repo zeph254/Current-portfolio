@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { FiGithub, FiLinkedin, FiMail, FiDownload, FiSmartphone, FiX, FiChevronDown, FiFileText } from 'react-icons/fi';
 
 // Import both document assets cleanly
-import cvFile from '../assets/Zephaniah\'s new cv (1)-1.pdf'; 
-import resumeFile from '../assets/Resume.pdf';
+import cvFile from '../assets/zephania-cv.pdf';
+import resumeFile from '../assets/zephania-resume.pdf';
 
 export default function Home() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
